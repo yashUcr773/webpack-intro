@@ -4,8 +4,8 @@
 	"description": "Intro and basic learning of Webpack",
 	"main": "index.js",
 	"scripts": {
-		"webpack:dev": "webpack --mode=development",
-		"webpack:prod": "webpack --mode=production",
+		"webpack:dev": "webpack --config ./webpack/webpack.dev.js",
+		"webpack:prod": "webpack --config ./webpack/webpack.prod.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
@@ -13,6 +13,7 @@
 	"license": "ISC",
 	"devDependencies": {
 		"webpack": "^5.102.1",
-		"webpack-cli": "^6.0.1"
+		"webpack-cli": "^6.0.1",
+		"webpack-merge": "^6.0.1"
 	}
 }
