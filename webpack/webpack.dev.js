@@ -1,6 +1,37 @@
-import { merge } from 'webpack-merge';
+import path from 'path';
 import common from './webpack.common.js';
+import { merge } from 'webpack-merge';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default merge(common, {
     mode: 'development',
+    devServer: {
+        port: 3008,
+        static: {
+            directory: path.resolve(__dirname, '..'),
+        },
+        devMiddleware: {
+            index: '../src/index.html',
+            // By default dev-server doesn't write files to disk and stores them in memory only.
+            // So dist folder will be empty and you won't be able to see the generated files.
+            // This option enables that so that other tools
+            // (e.g., backend server) can read them or Developer can debug easily.
+            writeToDisk: true,
+        },
+        client: {
+            // Shows a full-screen overlay in the browser when there are compiler errors or warnings
+            overlay: false
+        },
+        // Enable to reload the page when changes are made. Disable for Hot Module Replacement.
+        liveReload: false,
+        // Enable Hot Module Replacement without page reload as fallback in case of build failures.
+        hot: true,
+        // Automatically open the browser when the server starts
+        open: true,
+    }
 });
