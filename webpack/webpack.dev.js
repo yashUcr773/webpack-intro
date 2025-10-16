@@ -16,12 +16,14 @@ export default merge(common, {
             directory: path.resolve(__dirname, '..'),
         },
         devMiddleware: {
+            // If you are using dev server, not writing to disk and html file is in src and not in dist,
+            // you will not see the script to get.
             index: '../src/index.html',
             // By default dev-server doesn't write files to disk and stores them in memory only.
             // So dist folder will be empty and you won't be able to see the generated files.
             // This option enables that so that other tools
             // (e.g., backend server) can read them or Developer can debug easily.
-            writeToDisk: true,
+            writeToDisk: false,
         },
         client: {
             // Shows a full-screen overlay in the browser when there are compiler errors or warnings
