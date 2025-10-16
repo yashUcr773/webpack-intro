@@ -11,7 +11,7 @@ export default {
     entry: './src/scripts/index.js',
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: '[name].[contenthash:12].js',
+        filename: 'scripts/[name].[contenthash:12].js',
         // Remove all files in output directory before generating new build files
         clean: true,
         // clean: {
@@ -35,7 +35,7 @@ export default {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
+            filename: 'styles/[name].[contenthash].css',
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
