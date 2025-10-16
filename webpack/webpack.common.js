@@ -12,6 +12,14 @@ export default {
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: '[name].[contenthash:12].js',
+        // Remove all files in output directory before generating new build files
+        clean: true,
+        // clean: {
+        //     // only print logs to console when files are actually removed
+        //     dry: true,
+        //     // keep the following files instead of deleting them
+        //     keep: /\.css/,
+        // },
     },
     module: {
         rules: [
