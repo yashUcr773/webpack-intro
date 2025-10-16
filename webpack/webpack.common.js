@@ -10,7 +10,7 @@ export default {
     entry: './src/scripts/index.js',
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: 'bundle.js',
+        filename: '[name].[contenthash:12].js',
     },
     module: {
         rules: [
@@ -22,7 +22,7 @@ export default {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'styles.css',
+            filename: '[name].[contenthash].css',
         })
     ],
     mode: 'production',
