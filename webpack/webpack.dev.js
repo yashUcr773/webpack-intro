@@ -35,5 +35,13 @@ export default merge(common, {
         hot: true,
         // Automatically open the browser when the server starts
         open: true,
-    }
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
 });
