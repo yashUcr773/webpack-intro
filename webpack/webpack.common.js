@@ -1,7 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,17 +25,10 @@ export default {
             {
                 test: /\.html$/i,
                 use: ['html-loader'],
-            },
-            {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            },
+            }
         ],
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'styles/[name].[contenthash].css',
-        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: '[name].html',
