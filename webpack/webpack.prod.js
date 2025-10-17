@@ -1,9 +1,21 @@
 import { merge } from 'webpack-merge';
 import common from './webpack.common.js';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 
 export default merge(common, {
+    optimization: {
+        minimize: true,
+        minimizer: [
+            `...`,
+            new CssMinimizerPlugin({
+                minimizerOptions: {
+                    preset: ['default', { discardComments: { removeAll: true } }]
+                }
+            })
+        ]
+    },
     module: {
         rules: [
             {
