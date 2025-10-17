@@ -40,7 +40,23 @@ export default merge(common, {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                exclude: /\.module\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.css$/,
+                include: /\.module\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[local]__[md4:hash:7]'
+                            }
+                        }
+                    }
+                ],
             },
         ],
     },

@@ -38,5 +38,5 @@ export function showNotification() {
     setTimeout(function () {
         const notificationElement = document.querySelector('.' + notification)
         notificationElement.parentNode.removeChild(notificationElement)
-    }, 2000)
+    }, 20000)
 }

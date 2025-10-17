@@ -17,7 +17,11 @@ export default merge(common, {
                 use: [MiniCssExtractPlugin.loader, {
                     loader: 'css-loader',
                     options: {
-                        modules: true
+                        modules: {
+                            // this is true by default. set to false to use default exports
+                            namedExport: true,
+                            localIdentName: '[hash:base64]'
+                        }
                     }
                 }],
             },
