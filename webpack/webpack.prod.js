@@ -43,7 +43,7 @@ export default merge(common, {
             },
             {
                 test: /\.scss$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
             }
         ],
     },
