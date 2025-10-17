@@ -52,7 +52,8 @@ export default merge(common, {
                         loader: 'css-loader',
                         options: {
                             modules: {
-                                localIdentName: '[local]__[md4:hash:7]'
+                                localIdentName: '[local]__[md4:hash:7]',
+                                namedExport: false,
                             }
                         }
                     }

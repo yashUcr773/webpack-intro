@@ -19,7 +19,7 @@ export default merge(common, {
                     options: {
                         modules: {
                             // this is true by default. set to false to use default exports
-                            namedExport: true,
+                            namedExport: false,
                             localIdentName: '[hash:base64]'
                         }
                     }

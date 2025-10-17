@@ -1,4 +1,4 @@
-import { notification } from '../styles/notifications.module.css'
+import style from '../styles/notifications.module.css'
 
 export function renderTodos(todos) {
     const renderedItemArray = todos.map(function (todo) {
@@ -32,11 +32,11 @@ export function getTodoId(element) {
 }
 
 export function showNotification() {
-    const notificationHTML = `<div class="${notification}">Added New Todo!!</div>`
+    const notificationHTML = `<div class="${style.notification}">Added New Todo!!</div>`
     document.body.insertAdjacentHTML('beforeend', notificationHTML)
 
     setTimeout(function () {
-        const notificationElement = document.querySelector('.' + notification)
+        const notificationElement = document.querySelector('.' + style.notification)
         notificationElement.parentNode.removeChild(notificationElement)
     }, 20000)
 }
