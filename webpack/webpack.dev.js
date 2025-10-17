@@ -65,7 +65,15 @@ export default merge(common, {
             },
             {
                 test: /\.scss$/i,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'postcss-loader', {
+                    loader: 'sass-loader',
+                    options: {
+                        sassOptions: {
+                            quietDeps: true,
+                            silentDeprecations: ['import']
+                        }
+                    }
+                }],
             }
         ],
     },

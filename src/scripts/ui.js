@@ -21,6 +21,7 @@ export function renderTodos(todos) {
 export function clearNewTodoInput() {
     document.querySelector('.new-todo').value = ''
     showNotification()
+    showNotification2()
 }
 
 export function getTodoId(element) {
@@ -37,6 +38,20 @@ export function showNotification() {
 
     setTimeout(function () {
         const notificationElement = document.querySelector('.' + style.notification)
+        notificationElement.parentNode.removeChild(notificationElement)
+    }, 20000)
+}
+
+export function showNotification2() {
+    const notificationElement = document.createElement('div')
+    notificationElement.classList.add('alert', 'alert-success')
+    notificationElement.id = '123'
+    notificationElement.setAttribute('role', 'alert')
+    notificationElement.innerHTML = "Bootstrap Todo Added!!"
+    document.body.appendChild(notificationElement)
+
+    setTimeout(function () {
+        const notificationElement = document.querySelector('#123')
         notificationElement.parentNode.removeChild(notificationElement)
     }, 20000)
 }
