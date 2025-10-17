@@ -6,7 +6,7 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 export default merge(common, {
     optimization: {
-        minimize: true,
+        minimize: false,
         minimizer: [
             `...`,
             new CssMinimizerPlugin({
@@ -37,6 +37,10 @@ export default merge(common, {
                     }
                 }],
             },
+            {
+                test: /\.less$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+            }
         ],
     },
     plugins: [

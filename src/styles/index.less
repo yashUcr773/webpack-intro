@@ -1,3 +1,6 @@
+@body-background-color: #f5f5f5;
+@body-font-color: #4d4d4d;
+
 * {
     box-sizing: border-box;
 }
@@ -7,8 +10,8 @@ body {
     margin: 0;
     padding: 0;
     font: 18px 'Helvetica Neue', Helvetica, Arial;
-    background-color: #f5f5f5;
-    color: #4d4d4d;
+    background-color: @body-background-color;
+    color: @body-font-color;
     font-weight: 300;
 
 
@@ -32,9 +35,8 @@ h1 {
     margin: 0 auto;
     background-color: #fff;
     box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
-}
 
-.todolist-wrapper .new-todo {
+    .new-todo {
     font: 18px 'Helvetica Neue', Helvetica, Arial;
     margin: 0;
     width: 100%;
@@ -46,30 +48,30 @@ h1 {
     outline: none;
 }
 
-.todolist-wrapper .todo-list {
+.todo-list {
     margin: 0;
     padding: 0;
     list-style: none;
+        li {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        border-bottom: 1px solid #ededed;
+            .custom-checkbox {
+                position: relative;
+                width: 30px;
+                height: 30px;
+                margin-left: 15px;
+                border: 1px solid #777;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
 }
 
-.todolist-wrapper .todo-list li {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    border-bottom: 1px solid #ededed;
-}
-
-.todolist-wrapper .todo-list li .custom-checkbox {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    margin-left: 15px;
-    border: 1px solid #777;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .todolist-wrapper .todo-list li .custom-checkbox img {
     display: none;
