@@ -62,6 +62,10 @@ export default merge(common, {
             {
                 test: /\.less$/i,
                 use: ['style-loader', 'css-loader', 'less-loader'],
+            },
+            {
+                test: /\.scss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             }
         ],
     },
