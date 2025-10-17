@@ -8,7 +8,18 @@ export default merge(common, {
         rules: [
             {
                 test: /\.css$/i,
+                exclude: /\.module\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.css$/i,
+                include: /\.module\.css$/i,
+                use: [MiniCssExtractPlugin.loader, {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true
+                    }
+                }],
             },
         ],
     },
