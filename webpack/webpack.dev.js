@@ -12,6 +12,7 @@ const __dirname = dirname(__filename);
 
 export default merge(common, {
     mode: 'development',
+    devtool: "source-map",
     devServer: {
         port: 3008,
         static: {

@@ -16,3 +16,8 @@
 
 # Babel
 - We may use babel to support experimental features that are not yet released.
+
+# Sourcemaps
+- Source maps are a way to map the minified code back to original code in dev tools.
+- There are multiple ways, depending on quality and speed
+- It is optional to have it enabled in dev and not in prod
