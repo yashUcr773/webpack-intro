@@ -7,20 +7,48 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import path from 'path';
 import { glob } from 'glob';
+import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default merge(common, {
     optimization: {
-        minimize: false,
+        minimize: true,
         minimizer: [
             `...`,
             new CssMinimizerPlugin({
                 minimizerOptions: {
                     preset: ['default', { discardComments: { removeAll: true } }]
                 }
-            })
+            }),
+            new ImageMinimizerPlugin({
+                minimizer: {
+                    implementation: ImageMinimizerPlugin.imageminMinify,
+                    options: {
+                        plugins: [
+                            ["mozjpeg", { quality: 40, progressive: true }],
+                            ["pngquant", { quality: [0.7, 0.9] }],
+                            [
+                                "svgo",
+                                {
+                                    plugins: [
+                                        {
+                                            name: "preset-default",
+                                            params: {
+                                                overrides: {
+                                                    removeViewBox: false,
+                                                    cleanupIds: false,
+                                                },
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        ],
+                    },
+                },
+            }),
         ]
     },
     module: {
