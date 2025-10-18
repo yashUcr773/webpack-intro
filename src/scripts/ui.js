@@ -45,13 +45,13 @@ export function showNotification() {
 export function showNotification2() {
     const notificationElement = document.createElement('div')
     notificationElement.classList.add('alert', 'alert-success')
-    notificationElement.id = '123'
+    notificationElement.id = 't123'
     notificationElement.setAttribute('role', 'alert')
     notificationElement.innerHTML = "Bootstrap Todo Added!!"
     document.body.appendChild(notificationElement)
 
     setTimeout(function () {
-        const notificationElement = document.querySelector('#123')
+        const notificationElement = document.querySelector('#t123')
         notificationElement.parentNode.removeChild(notificationElement)
     }, 20000)
 }

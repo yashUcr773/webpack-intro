@@ -4,3 +4,4 @@
 - However, this is not the most optimized way.
 - Also note, if we have imported css in js, then we need loaders for webpack to run.
 - Post css can be configured to add browser prefixes.
+- Modules Css may not work with purge css as it cant find the styles using static analysis. Alternative is to use @purge-ignore

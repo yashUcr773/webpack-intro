@@ -1,6 +1,8 @@
 import path from 'path';
 import common from './webpack.common.js';
 import { merge } from 'webpack-merge';
+import { PurgeCSSPlugin } from 'purgecss-webpack-plugin';
+import { glob } from 'glob';
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -77,4 +79,12 @@ export default merge(common, {
             }
         ],
     },
+    plugins: [
+        new PurgeCSSPlugin({
+            paths: glob.sync(
+                `${path.join(__dirname, '../src')}/**/*`,
+                { nodir: true }
+            )
+        })
+    ]
 });
