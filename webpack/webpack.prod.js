@@ -48,6 +48,16 @@ export default merge(common, {
                         ],
                     },
                 },
+                generator: [
+                    {
+                        type: 'asset',
+                        preset: 'webp-custom-name',
+                        implementation: ImageMinimizerPlugin.imageminGenerate,
+                        options: {
+                            plugins: ['imagemin-webp']
+                        }
+                    }
+                ]
             }),
         ]
     },

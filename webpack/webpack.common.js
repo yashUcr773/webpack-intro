@@ -2,6 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -33,6 +34,12 @@ export default {
             template: './src/index.html',
             filename: '[name].html',
         }),
+        new CopyPlugin({
+            patterns: [{
+                from: 'src/assets/images/motivational/*.*',
+                to: 'assets/images/motivational/[name].[contenthash][ext]'
+            }]
+        })
     ],
     mode: 'production',
 };
