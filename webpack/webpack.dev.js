@@ -76,6 +76,18 @@ export default merge(common, {
                         }
                     }
                 }],
+            },
+            {
+                test: /\.(png|jpg|svg)$/,
+                type: "asset",
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 10 * 1024,
+                    }
+                },
+                generator: {
+                    filename: './assets/images/[name][ext]'
+                }
             }
         ],
     },
