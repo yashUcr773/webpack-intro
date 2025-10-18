@@ -13,3 +13,6 @@
 - For js, need to import images
   - Then webpack can either import the image in assets (larger files)
   - or replace with base64 url (smaller files)
+
+# Babel
+- We may use babel to support experimental features that are not yet released.
