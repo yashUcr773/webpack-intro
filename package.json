@@ -6,6 +6,7 @@
 	"scripts": {
 		"webpack:dev": "set NODE_ENV='development&&webpack serve --config ./webpack/webpack.dev.js",
 		"webpack:prod": "set NODE_ENV=production&&webpack --config ./webpack/webpack.prod.js",
+		"typeCheck": "tsc --noEmit",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
@@ -15,6 +16,7 @@
 		"@babel/core": "^7.28.4",
 		"@babel/plugin-proposal-pipeline-operator": "^7.27.1",
 		"@babel/preset-env": "^7.28.3",
+		"@babel/preset-typescript": "^7.27.1",
 		"autoprefixer": "^10.4.21",
 		"babel-loader": "^10.0.0",
 		"copy-webpack-plugin": "^13.0.1",
@@ -36,6 +38,7 @@
 		"sass": "^1.93.2",
 		"sass-loader": "^16.0.5",
 		"style-loader": "^4.0.0",
+		"typescript": "^5.9.3",
 		"webpack": "^5.102.1",
 		"webpack-cli": "^6.0.1",
 		"webpack-dev-server": "^5.2.2",

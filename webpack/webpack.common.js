@@ -21,6 +21,9 @@ export default {
         //     keep: /\.css/,
         // },
     },
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
     module: {
         rules: [
             {
@@ -28,7 +31,7 @@ export default {
                 use: ['html-loader'],
             },
             {
-                test: /\.js$/,
+                test: /\.(js|ts)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
