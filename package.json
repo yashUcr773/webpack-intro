@@ -4,8 +4,8 @@
 	"description": "Intro and basic learning of Webpack",
 	"main": "index.js",
 	"scripts": {
-		"webpack:dev": "webpack serve --config ./webpack/webpack.dev.js",
-		"webpack:prod": "webpack --config ./webpack/webpack.prod.js",
+		"webpack:dev": "set NODE_ENV='development&&webpack serve --config ./webpack/webpack.dev.js",
+		"webpack:prod": "set NODE_ENV=production&&webpack --config ./webpack/webpack.prod.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
