@@ -13,6 +13,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default merge(common, {
+    output: {
+        publicPath: '/static/',
+    },
     optimization: {
         minimize: true,
         minimizer: [
