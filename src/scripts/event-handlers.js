@@ -23,7 +23,7 @@ export function newTodoEventHandler(event) {
 }
 
 export async function removeTodoEventHandler(event) {
-    const [{ Modal }, { default: $ }] = Promise.all([
+    const [{ Modal }, { default: $ }] = await Promise.all([
         import(
             'bootstrap'
             /* webpackChunkName: "bootstrap" */
@@ -40,7 +40,7 @@ export async function removeTodoEventHandler(event) {
 }
 
 export async function confirmRemoveEventHandler(event) {
-    const [{ Modal }, { default: $ }] = Promise.all([
+    const [{ Modal }, { default: $ }] = await Promise.all([
         import(
             'bootstrap'
             /* webpackChunkName: "bootstrap" */
