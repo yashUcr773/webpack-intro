@@ -1,0 +1,12 @@
+{
+  "name": "webpack-intro",
+  "version": "1.0.0",
+  "description": "Intro and basic learning of Webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
