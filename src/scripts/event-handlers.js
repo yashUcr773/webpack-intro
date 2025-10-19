@@ -1,7 +1,7 @@
 
 import { renderTodos, clearNewTodoInput, getTodoId } from './ui';
 import { getAllTodos, addTodo, removeTodo, updateTodo } from './data';
-import { capitalize } from 'lodash';
+import { capitalize } from 'lodash-es';
 import { trim } from './helpers';
 import { Modal } from 'bootstrap';
 import $ from 'jquery'
