@@ -21,3 +21,10 @@
 - Source maps are a way to map the minified code back to original code in dev tools.
 - There are multiple ways, depending on quality and speed
 - It is optional to have it enabled in dev and not in prod
+
+# Code Splitting
+- We can split codes from 1 big bundle to multiple small bundles. Both approaches have their pros and cons.
+- There are multiple strategies for code splitting.
+  - Extract heavy dependencies to separate bundles.
+  - Splitting based on bundle size.
+  - Splitting based on our code and node_modules

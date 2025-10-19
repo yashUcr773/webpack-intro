@@ -60,20 +60,61 @@ export default merge(common, {
                 ]
             }),
         ],
+        // // based on vendors
+        // splitChunks: {
+        //     cacheGroups: {
+        //         jquery: {
+        //             test: /[\\/]node_modules[\\/]jquery[\\/]/,
+        //             chunks: 'initial',
+        //             name: 'jquery'
+        //         },
+        //         bootstrap: {
+        //             test: /[\\/]node_modules[\\/]bootstrap[\\/]/,
+        //             chunks: 'initial',
+        //             name: 'bootstrap'
+        //         }
+        //     }
+        // },
+
+        // // based on size
+        // splitChunks: {
+        //     chunks: 'all',
+        //     maxSize: 100 * 1024,
+        //     minSize: 50 * 1024,
+        //     name(module, chunks, cacheGroupKey) {
+        //         const fileName = path.basename(module.identifier());
+        //         return fileName;
+        //     }
+        // },
+
+        // // based on our code vs external libs
+        // splitChunks: {
+        //     chunks: 'all',
+        //     maxSize: Infinity,
+        //     minSize: 0,
+        //     cacheGroups: {
+        //         node_modules: {
+        //             test: /[\\/]node_modules[\\/]/,
+        //             name: 'node_modules'
+        //         }
+        //     }
+        // },
+
+        // bundle based on every dependency
         splitChunks: {
+            chunks: 'all',
+            maxSize: Infinity,
+            minSize: 0,
             cacheGroups: {
-                jquery: {
-                    test: /[\\/]node_modules[\\/]jquery[\\/]/,
-                    chunks: 'initial',
-                    name: 'jquery'
-                },
-                bootstrap: {
-                    test: /[\\/]node_modules[\\/]bootstrap[\\/]/,
-                    chunks: 'initial',
-                    name: 'bootstrap'
+                node_modules: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name(module) {
+                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)[\\/]|$/)[1];
+                        return packageName
+                    }
                 }
             }
-        }
+        },
     },
     module: {
         rules: [
