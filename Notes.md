@@ -28,3 +28,9 @@
   - Extract heavy dependencies to separate bundles.
   - Splitting based on bundle size.
   - Splitting based on our code and node_modules
+
+# Lazy loading
+- We can use lazy loading to load code splits only when needed
+
+# Custom Dev Server
+- We can create our own custom dev server if required.
