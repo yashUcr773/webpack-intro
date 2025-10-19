@@ -8,6 +8,7 @@ import { dirname } from 'path';
 import path from 'path';
 import { glob } from 'glob';
 import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -207,6 +208,10 @@ export default merge(common, {
                 `${path.join(__dirname, '../src')}/**/*`,
                 { nodir: true }
             )
+        }),
+        new CompressionPlugin({
+            algorithm: 'gzip',
+            test: /\.(js|css)$/
         })
     ],
     devtool: 'hidden-source-map',
