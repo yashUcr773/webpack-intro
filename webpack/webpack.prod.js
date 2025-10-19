@@ -139,5 +139,6 @@ export default merge(common, {
             )
         })
     ],
+    devtool: 'hidden-source-map',
     mode: 'production',
 });
