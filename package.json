@@ -1,0 +1,19 @@
+{
+  "name": "webpack-intro",
+  "version": "1.0.0",
+  "description": "Intro and basic learning of Webpack",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc -w",
+    "serve": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
