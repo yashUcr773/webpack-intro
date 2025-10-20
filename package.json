@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.17.20",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "lodash": "^4.17.21"
   }
 }
